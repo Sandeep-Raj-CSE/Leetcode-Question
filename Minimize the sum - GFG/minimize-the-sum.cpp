@@ -12,36 +12,20 @@ using namespace std;
 class Solution {
 public:
     int minimizeSum(int n, vector<int> arr) {
-        // code here
-        
-        priority_queue<int>pq;
-        
-        // for(int i=0; i<arr.size();i++){
-        //     pq.push(-1*i);
-        // }
-        
-        for(auto i:arr){
-            pq.push(-1*i);
-        }
-        
-        int san=0;
-        
-        while(pq.size()>1){
-            int a=-1*pq.top();
+        priority_queue<int,vector<int>,greater<int>>pq(arr.begin(),arr.end());
+        int ans=0;
+        while(pq.size()>=2){
+            int a=pq.top();
             pq.pop();
-            
-            int b=-1*pq.top();
-            
+            int b=pq.top();
             pq.pop();
-            
-            
-            san=san+a+b;
-            pq.push(-1*(a+b));
-            
+            ans=ans+a+b;
+            pq.push(a+b);
         }
-        
-        return san;
+        return ans;
     }
+    
+
 };
 
 //{ Driver Code Starts.
