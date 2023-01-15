@@ -21,13 +21,7 @@ class Solution{
             long long currval=arr[i];
             while(!s.empty() && s.top()>=currval)
                 s.pop();
-            
-            
-            // if(s.empty()){
-            //     ans[i]=-1;
-            // }else{
-            //     ans[i]=arr[s.top()];
-            // }
+        
             res[i]=s.empty()?-1:s.top();
 
             s.push(currval);
