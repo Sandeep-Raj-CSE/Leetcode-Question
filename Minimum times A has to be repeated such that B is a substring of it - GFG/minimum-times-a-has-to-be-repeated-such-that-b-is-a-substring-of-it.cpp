@@ -8,35 +8,21 @@ using namespace std;
 
 class Solution {
   public:
-    int minRepeats(string str1, string str2) {
-        // code here
-         int m=str1.length();
-         int n=str2.length();
- 
-          int count;
-           bool found = false;
- 
-    for (int i = 0; i < m; i++) {
-        int j = i;
-        int k = 0;
-        count = 1;
- 
-        while (k < n && str1[j] == str2[k]) {
-            if (k == n - 1) {
-                found = true;
-                break;
-            }
-            j = (j + 1) % m;
- 
-            if (j == 0)
-                count++;
- 
-            k++;
+    int minRepeats(string A, string B) {
+        string temp=A;
+        int moves=1;
+        while(A.size()<B.size())
+        {
+            A+=temp;
+            moves++;
         }
-        if (found)
-            return count;
-    }
-    return -1;
+        if(A.find(B)!=-1)return moves;
+
+        A+=temp;
+        moves++;
+        if(A.find(B)!=-1)return moves;
+
+        return -1;
     }
 };
 
