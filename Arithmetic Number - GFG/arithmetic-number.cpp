@@ -11,9 +11,9 @@ class Solution{
 public:
     int inSequence(int a, int b, int c){
         // code here
-        
-      
+         
       if (c==0)
+      
       return (a==b);
       
       if(a==b)return true;
