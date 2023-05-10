@@ -53,27 +53,33 @@ struct node *newNode(int data) {
 class Solution{
 public:
 
-    void create_tree(node* root0, vector<int> &vec){
+    void create_tree(node* rootelem, vector<int> &v){
         //Your code goes here
        
-        queue<node*>q;
-        q.push(root0);
-
-        for(int i=1;i<vec.size();i+=2){
-
-            auto tmp=q.front();
-
-            q.pop();
-
-            tmp->left=newNode(vec[i]);
-
-            q.push(tmp->left);
-
-            tmp->right=newNode(vec[i+1]);
-
-            q.push(tmp->right);
+       queue<node*>q;
+       q.push(rootelem);
+       
+       
+       for(int i=1; i<v.size()-1;i=i+2){
+           auto temp=q.front();
+           
+           q.pop();
+           
+           temp->left=newNode(v[i]);
+           
+           q.push(temp->left);
+           
+           temp->right=newNode(v[i+1]);
+           q.push(temp->right);
+           
+           
+           
+           
+           
+           
+       }
     }
-}
+
 };
 
 //{ Driver Code Starts.
