@@ -7,17 +7,23 @@ using namespace std;
 //User function template for C++
 class Solution{
 public:	
-	int matSearch (vector <vector <int>> &Mat, int N, int M, int count)
+	int matSearch (vector <vector <int>> &mat, int N, int M, int X)
 	{
 	    // your code here
-	    for(int i=0; i<N;i++){
-                for(int j=0; j<M;j++){
-                    if(Mat[i][j]==count){
-                        return true;
-                    }
-                }
-        }
-                return false;
+	    
+	    int row=mat.size();
+	    int col=mat[0].size();
+	    
+	    
+	    for(int i=0; i<row;i++){
+	        for(int j=0; j<col;j++){
+	            if(mat[i][j]==X){
+	                return true;
+	            }
+	        }
+	    }
+	    
+	    return false;
 	}
 };
 
