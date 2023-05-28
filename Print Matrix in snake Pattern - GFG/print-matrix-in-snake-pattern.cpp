@@ -12,22 +12,28 @@ class Solution
     vector<int> snakePattern(vector<vector<int> > matrix)
     {   
         // code here
-        //vector<vector<int>>ans;
+        
         vector<int>ans;
         int row=matrix.size();
         int col=matrix[0].size();
+        
+        
         for(int i=0; i<row;i++){
-            //vector<int>v;
             if(i%2==0){
                 for(int j=0; j<col;j++){
-                    ans.push_back(matrix[i][j]);
+                    
+                     ans.push_back(matrix[i][j]);
+                    
+                }
+                // ans.push_back(matrix[i][j]);
+            }else{
+                
+                 for(int j=col-1; j>=0;j--){
+                    
+                     ans.push_back(matrix[i][j]);
+                    
                 }
                 
-            }
-            else{
-                for(int j=col-1;j>=0;j--){
-                    ans.push_back(matrix[i][j]);
-                }
             }
         }
         return ans;
