@@ -11,12 +11,36 @@ class Solution{
         // dono array ko 3 rd array me dalo phir kth element find 
         
         
-        int arr3[m+n];
+         //int arr3[m+n];
         
         
-        merge(arr1,arr1+n,arr2,arr2+m,arr3);
+        // merge(arr1,arr1+n,arr2,arr2+m,arr3);
         
-        return arr3[k-1];
+        // return arr3[k-1];
+        
+        
+        vector<int>ans;
+        
+        for(int i=0; i<n;i++){
+            ans.push_back(arr1[i]);
+        }
+        
+        
+        for(int i=0; i < m;i++){
+            ans.push_back(arr2[i]);
+        }
+        
+        
+        
+        
+        sort(ans.begin(),ans.end());
+        
+        
+        return ans[k-1];
+        
+        
+        
+        
         
     }
 };
