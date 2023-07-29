@@ -60,8 +60,7 @@ public:
 };
 */
 
-int arr[1000];
-int top=-1;
+
 void MyStack :: push(int x)
 {
     // Your Code
