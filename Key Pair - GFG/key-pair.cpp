@@ -13,28 +13,51 @@ public:
 	bool hasArrayTwoCandidates(int arr[], int n, int x) {
 	    // code here
 	    
+	   // unordered_map<int,int>mp;
 	    
-	    unordered_map<int,int>mp;
+	   // for(int i=0; i<n;i++){
+	   //     mp[arr[i]]++;
+	   // }
 	    
-	    for(int i=0; i<n;i++){
-	        mp[arr[i]]++;
+	   // for(auto m:mp){
+	   //     int key=m.first;
+	   //     int val=m.second;
+	        
+	        
+	   //     int pair=x-key;
+	        
+	   //     if(pair==key){
+	   //         if(val > 1){
+	   //             return true;
+	   //         }
+	   //     }else{
+	   //         if(mp.find(key)!=mp.end()){
+	   //             return true;
+	   //         }
+	   //     }
+	   // }
+	    
+	   // return false;
+	   
+	   
+	    unordered_map<int,int> umap;
+	    for(int i=0;i<n;i++)
+	        umap[arr[i]]++;
+	    for(auto itr = umap.begin(); itr!=umap.end(); itr++){
+	        int key = itr->first;
+	        int val = itr->second;
+	        
+	        int pair = x-key;
+	        if(pair==key){
+	            if(val>1)
+	                return true;
+	        }else{
+	            if(umap.find(pair)!=umap.end())
+	                return true;
+	        }
 	    }
 	    
-	    
-	    for(int i=0; i<n;i++){
-	        int diff=x-arr[i];
-	        if(mp[diff]>0 && diff !=arr[i]){
-               return true;
-           }
-           else if(diff==arr[i]){
-               if(mp[diff]>1){
-                   return true;
-               }
-           }
-       }
-       return false;
-	    
-	    
+	    return false;
 	}
 };
 
