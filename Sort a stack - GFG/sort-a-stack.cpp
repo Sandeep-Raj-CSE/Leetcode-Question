@@ -50,25 +50,23 @@ public:
 
 /* The below method sorts the stack s 
 you are required to complete the below method */
+#include <bits/stdc++.h>
+using namespace std;
 void SortedStack :: sort()
 {
    //Your code here
+   vector<int>ans;
+   int len=0;
+   while(!s.empty()){
+       ans.push_back(s.top());
+       s.pop();
+       len++;
+       
+   }
    
- vector<int>ans;
- 
- if(s.empty())return;
- 
- while(!s.empty()){
-     ans.push_back(s.top());
-     s.pop();
-     
- }
- 
- std::sort(ans.begin(),ans.end());
- 
- for(int i=0; i<ans.size();i++){
-     s.push(ans[i]);
- }
-   
+   std::sort(ans.begin(),ans.end());
+   for(int i=0; i<len;i++){
+       s.push(ans[i]);
+   }
    
 }
